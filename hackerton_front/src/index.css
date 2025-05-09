@@ -26,6 +26,24 @@ body {
   text-align: right;
   margin-top: 18px;
   margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.title-wrapper, .subtitle-wrapper {
+  display: block;
+  width: 100%;
+  text-align: right;
+}
+
+.title-image {
+  width: 300px;
+  height: auto;
+  display: inline;
+  object-fit: contain;
+  margin-top: 50px;
 }
 
 .title {
@@ -108,19 +126,77 @@ code {
 .content-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 2rem;
+  align-items: flex-end;
+  margin-top: -100px;
+  position: relative;
+  width: 100%;
+  padding-right: 10px;
 }
 
 .description {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   color: #333;
-  margin-bottom: 1rem;
-  text-align: center;
+  text-align: right;
+  width: 250px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(-2deg);
+  z-index: 1;
+  padding: 0 100px;
 }
 
+.description p {
+  margin: 0;
+  line-height: 1;
+  display: inline;
+  white-space: normal;  
+  word-break: keep-all;
+}
+
+.memo-container {
+  width: 250px;
+  height: 180px;
+  position: relative;
+  margin: 0;
+}
+
+.memo-paper {
+  width: 100%;
+  height: 100%;
+  background-color: #ffe600;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transform: translateY(-340px);
+  padding: 20px;
+}
+
+.memo-lines {
+  margin-top: 40px;
+}
+
+.memo-line {
+  height: 2px;
+  background-color: #e0e0e0;
+  margin: 15px 0;
+  width: 100%;
+}
+
+.memo-line:nth-child(1) { width: 90%; }
+.memo-line:nth-child(2) { width: 85%; }
+.memo-line:nth-child(3) { width: 95%; }
+
 .memo-image {
-  width: 300px;
+  width: 250px;
   height: auto;
   margin-bottom: 2rem;
+  position: relative;
+  z-index: 0;
+}
+
+.memo-text {
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+  margin-top: 40px;
+  font-weight: 500;
 } 

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'; // useNavigate를 사용하여 �
 import styled from 'styled-components';
 
 const Container = styled.div`
-  height: 100vh;
+  height: 140vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -65,7 +65,7 @@ function Pages() {
 
   useEffect(() => {
     // Flask 서버의 엔드포인트 호출
-    fetch('http://localhost:5000/questions/ptsd')
+    fetch('http://localhost:5000/questions/depression')
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -103,7 +103,7 @@ function Pages() {
 
   return (
     <Container>
-      <Title>외상 스트레스 장애</Title>
+      <Title>우울증세</Title>
       {loading ? (
         <p>로딩 중...</p>
       ) : (

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // useNavigate를 사용하여 페이지 이동
 import styled from 'styled-components';
 
 const Container = styled.div`
-  height: 100vh;
+  height: 140vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,11 +60,10 @@ function Pages() {
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [answers, setAnswers] = useState({}); // 각 문항의 선택 값을 저장
-  const navigate = useNavigate(); // useNavigate 훅 사용
 
   useEffect(() => {
     // Flask 서버의 엔드포인트 호출
-    fetch('http://localhost:5000/questions/ptsd')
+    fetch('http://localhost:5000/questions/anxiety')
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -98,12 +96,11 @@ function Pages() {
   const handleSubmit = () => {
     console.log('제출된 답변:', answers);
     alert('답변이 제출되었습니다!');
-    navigate('/page'); // 제출 후 Page.js로 이동
   };
 
   return (
     <Container>
-      <Title>외상 스트레스 장애</Title>
+      <Title>불안증세</Title>
       {loading ? (
         <p>로딩 중...</p>
       ) : (

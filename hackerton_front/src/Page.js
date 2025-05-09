@@ -31,26 +31,20 @@ const Button = styled.button`
 
 function Page() {
   return (
-    <Router>
-      <Routes>
-        {/* 메인 페이지 */}
-        <Route
-          path="/"
-          element={
+    
             <Container>
               <h1>검사시작!!</h1>
               <Link to="/pages">
                 <Button>외상 스트레스 장애</Button>
               </Link>
-              <Button>우울증세</Button>
+              <Link to="/pagesol">
+                <Button>우울증세</Button>
+              </Link>
+              <Link to="/pagesnl">
               <Button>불안증세</Button>
+              </Link>
             </Container>
-          }
-        />
-        {/* Pages로 이동 */}
-        <Route path="/pages" element={<Pages />} />
-      </Routes>
-    </Router>
+          
   );
 }
 

@@ -5,6 +5,8 @@ import styled from 'styled-components';
 // import SurveyPage from './pages/SurveyPage';
 import Page from './Page';
 import Pages from './Pages';
+import Pagesol from './Pagesol';
+import Pagesnl from './Pagesnl';
 import ResultPage from './resultPage/ResultPage';
 
 // 레이아웃 컴포넌트
@@ -38,6 +40,8 @@ function App() {
           <Route path="/result" element={<ResultPage />} />
           <Route path="/Page" element={<Page />} />
             <Route path="/Pages" element={<Pages />} />
+            <Route path="/Pagesol" element={<Pagesol />} />
+            <Route path="/Pagesnl" element={<Pagesnl />} />
         </Routes>
       </MainSection>
       <SideSection />

@@ -31,12 +31,8 @@ const Button = styled.button`
 
 function Page() {
   return (
-    <Router>
-      <Routes>
-        {/* 메인 페이지 */}
-        <Route
-          path="/"
-          element={
+    
+      
             <Container>
               <h1>검사시작!!</h1>
               <Link to="/pages">
@@ -45,12 +41,8 @@ function Page() {
               <Button>우울증세</Button>
               <Button>불안증세</Button>
             </Container>
-          }
-        />
-        {/* Pages로 이동 */}
-        <Route path="/pages" element={<Pages />} />
-      </Routes>
-    </Router>
+          
+
   );
 }
 

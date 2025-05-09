@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
 // import MainPage from './pages/MainPage';
 // import SurveyPage from './pages/SurveyPage';
-import Page from './Page';
+import Page from './Page'
 import Pages from './Pages';
 import ResultPage from './resultPage/ResultPage';
 
@@ -37,7 +37,7 @@ function App() {
           <Route path="/survey" element={<SurveyPage />} /> */}
           <Route path="/result" element={<ResultPage />} />
           <Route path="/Page" element={<Page />} />
-            <Route path="/Pages" element={<Pages />} />
+          <Route path="/Pages" element={<Pages />} />
         </Routes>
       </MainSection>
       <SideSection />

@@ -9,6 +9,7 @@ const Card = styled.div`
   margin: 20px 0;
   width: 100%;
   max-width: 600px;
+  hight : 100px;
   
 `;
 

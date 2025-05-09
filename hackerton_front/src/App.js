@@ -11,7 +11,7 @@ import MainPage from './pages/MainPage';
 // 레이아웃 컴포넌트
 const Layout = styled.div`
   display: flex;
-  min-height: 100vh;`
+  height: 100%;`
 ;
 
 const SideSection = styled.div`
@@ -25,7 +25,9 @@ const MainSection = styled.div`
   margin: 0 auto;
   padding: 20px;
   background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);`
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height : 100%`
+  
 ;
 
 function App() {

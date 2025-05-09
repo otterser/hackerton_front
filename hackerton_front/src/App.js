@@ -1,8 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
-// import MainPage from './pages/MainPage';
-// import SurveyPage from './pages/SurveyPage';
+import StartPage from './pages/StartPage';
+import NextPage from './pages/NextPage';
 import ResultPage from './resultPage/ResultPage';
 
 // 레이아웃 컴포넌트
@@ -13,7 +13,7 @@ const Layout = styled.div`
 
 const SideSection = styled.div`
   flex: 1;
-  background-color: #f5f5f5;
+  background-color: rgb(128, 143, 133);
 `;
 
 const MainSection = styled.div`
@@ -27,18 +27,18 @@ const MainSection = styled.div`
 
 function App() {
   return (
-    <Router>
-      <Layout>
-        <SideSection />
-        <MainSection>
-          <Routes>
-            {/* <Route path="/" element={<MainPage />} />
-            <Route path="/survey" element={<SurveyPage />} /> */}
-            <Route path="/result" element={<ResultPage />} />
-          </Routes>
-        </MainSection>
-        <SideSection />
-      </Layout>
-    </Router>
+    <Layout>
+      <SideSection />
+      <MainSection>
+        <Routes>
+          <Route path="/" element={<StartPage />} />
+          <Route path="/next" element={<NextPage />} />
+          <Route path="/result" element={<ResultPage />} />
+        </Routes>
+      </MainSection>
+      <SideSection />
+    </Layout>
   )
 }
+
+export default App;

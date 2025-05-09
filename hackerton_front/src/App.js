@@ -1,9 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
-// import MainPage from './pages/MainPage';
-// import SurveyPage from './pages/SurveyPage';
 import ResultPage from './resultPage/ResultPage';
+import MainPage from './pages/MainPage';
 
 // 레이아웃 컴포넌트
 const Layout = styled.div`
@@ -13,7 +12,7 @@ const Layout = styled.div`
 
 const SideSection = styled.div`
   flex: 1;
-  background-color: #f5f5f5;
+  background-color: rgb(128, 143, 133);
 `;
 
 const MainSection = styled.div`
@@ -31,8 +30,8 @@ function App() {
       <SideSection />
       <MainSection>
         <Routes>
-          {/* <Route path="/" element={<MainPage />} />
-          <Route path="/survey" element={<SurveyPage />} /> */}
+          <Route path="/" element={<MainPage />} />
+          {/* <Route path="/next" element={<NextPage />} /> */}
           <Route path="/result" element={<ResultPage />} />
         </Routes>
       </MainSection>

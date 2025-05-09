@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
 // import MainPage from './pages/MainPage';
 // import SurveyPage from './pages/SurveyPage';
@@ -27,18 +27,18 @@ const MainSection = styled.div`
 
 function App() {
   return (
-    <Router>
-      <Layout>
-        <SideSection />
-        <MainSection>
-          <Routes>
-            {/* <Route path="/" element={<MainPage />} />
-            <Route path="/survey" element={<SurveyPage />} /> */}
-            <Route path="/result" element={<ResultPage />} />
-          </Routes>
-        </MainSection>
-        <SideSection />
-      </Layout>
-    </Router>
+    <Layout>
+      <SideSection />
+      <MainSection>
+        <Routes>
+          {/* <Route path="/" element={<MainPage />} />
+          <Route path="/survey" element={<SurveyPage />} /> */}
+          <Route path="/result" element={<ResultPage />} />
+        </Routes>
+      </MainSection>
+      <SideSection />
+    </Layout>
   )
 }
+
+export default App;

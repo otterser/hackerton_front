@@ -1,13 +1,10 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
-<<<<<<< HEAD
-=======
 // import MainPage from './pages/MainPage';
 // import SurveyPage from './pages/SurveyPage';
 import Page from './Page'
 import Pages from './Pages';
->>>>>>> de69752320d6a1bee6dd0685e9ff4d68eb4a45b6
 import ResultPage from './resultPage/ResultPage';
 import MainPage from './pages/MainPage';
 
@@ -19,13 +16,8 @@ const Layout = styled.div`
 
 const SideSection = styled.div`
   flex: 1;
-<<<<<<< HEAD
-  background-color: rgb(128, 143, 133);
-`;
-=======
   background-color: #f5f5f5;`
 ;
->>>>>>> de69752320d6a1bee6dd0685e9ff4d68eb4a45b6
 
 const MainSection = styled.div`
   flex: 2;

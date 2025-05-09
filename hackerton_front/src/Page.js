@@ -34,13 +34,13 @@ function Page() {
     
             <Container>
               <h1>검사시작!!</h1>
-              <Link to="/pages">
+              <Link to="/Pages">
                 <Button>외상 스트레스 장애</Button>
               </Link>
-              <Link to="/pagesol">
+              <Link to="/Pagesol">
                 <Button>우울증세</Button>
               </Link>
-              <Link to="/pagesnl">
+              <Link to="/Pagesnl">
               <Button>불안증세</Button>
               </Link>
             </Container>

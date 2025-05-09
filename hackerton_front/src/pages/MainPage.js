@@ -5,7 +5,7 @@ export default function MainPage() {
   const navigate = useNavigate();
 
   const handleStart = () => {
-    navigate("/next");
+    navigate("/Page");
   };
 
   return (

@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
 // import MainPage from './pages/MainPage';
 // import SurveyPage from './pages/SurveyPage';
+import Score from './resultPage/Score';
 import Page from './Page'
 import Pages from './Pages';
 import Pagesol from './Pagesol';
@@ -39,7 +40,7 @@ function App() {
       <MainSection>
         <Routes>
           <Route path="/" element={<MainPage />} />
-          {/* <Route path="/next" element={<NextPage />} /> */}
+          <Route path="/Score" element={<Score />} />
           <Route path="/result" element={<ResultPage />} />
           <Route path="/Page" element={<Page />} />
             <Route path="/Pages" element={<Pages />} />

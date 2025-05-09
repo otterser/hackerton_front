@@ -59,6 +59,39 @@ const Grade = styled.span`
   }};
 `;
 
+const MapContainer = styled.div`
+  margin-top: 30px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+`;
+
+const MapTitle = styled.h3`
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+`;
+
+const MapPlaceholder = styled.div`
+  width: 100%;
+  height: 300px;
+  background: #e9ecef;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+  font-weight: 500;
+`;
+
+const MapInfo = styled.p`
+  margin-top: 15px;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+`;
+
 const HealthMap = ({ results = [] }) => {
   const categories = [
     '신체 건강',
@@ -68,6 +101,15 @@ const HealthMap = ({ results = [] }) => {
     '스트레스',
     '운동 상태'
   ];
+
+  // B 등급이 2개 이상인지 확인
+  const hasMultipleB = results.filter(result => result.grade === 'B').length >= 2;
+  
+  // C 등급이 1개 이상인지 확인
+  const hasC = results.filter(result => result.grade === 'C').length >= 1;
+
+  // 지도 표시 조건 확인
+  const shouldShowMap = hasMultipleB || hasC;
 
   return (
     <Container>
@@ -81,6 +123,20 @@ const HealthMap = ({ results = [] }) => {
           </HealthItem>
         );
       })}
+
+      {shouldShowMap && (
+        <MapContainer>
+          <MapTitle>주변 상담 센터 및 병원</MapTitle>
+          <MapPlaceholder>
+            지도 로딩 중...
+          </MapPlaceholder>
+          <MapInfo>
+            * 현재 위치 기반으로 주변의 정신건강 전문 상담 센터와 병원을 보여드립니다.
+            <br />
+            * GPS 위치 정보 수집에 동의해주시면 더 정확한 정보를 제공해드립니다.
+          </MapInfo>
+        </MapContainer>
+      )}
     </Container>
   );
 };

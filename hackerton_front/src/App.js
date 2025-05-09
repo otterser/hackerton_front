@@ -1,45 +1,48 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
+// import MainPage from './pages/MainPage';
+// import SurveyPage from './pages/SurveyPage';
+import Page from './Page';
+import Pages from './Pages';
+import ResultPage from './resultPage/ResultPage';
 
-
-
-const Container = styled.div`
-  height: 100vh;
+// 레이아웃 컴포넌트
+const Layout = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #f9fafb;
-`;
+  min-height: 100vh;`
+;
 
+const SideSection = styled.div`
+  flex: 1;
+  background-color: #f5f5f5;`
+;
 
-
-const Button = styled.button`
-  margin-top: 12px;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: none;
-  background-color: #3b82f6;
-  color: white;
-  cursor: pointer;
-  width: 200px;
-
-  &:hover {
-    background-color: #2563eb;
-  }
-`;
+const MainSection = styled.div`
+  flex: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);`
+;
 
 function App() {
   return (
-    <Container>
-      <h1>검사시작!!</h1>
-      <Button>외상 스트레스 장애</Button>
-      <Button>우울증세</Button>
-      <Button>불안증세</Button>
-    </Container>
-  );
+    <Layout>
+      <SideSection />
+      <MainSection>
+        <Routes>
+          {/* <Route path="/" element={<MainPage />} />
+          <Route path="/survey" element={<SurveyPage />} /> */}
+          <Route path="/result" element={<ResultPage />} />
+          <Route path="/Page" element={<Page />} />
+            <Route path="/Pages" element={<Pages />} />
+        </Routes>
+      </MainSection>
+      <SideSection />
+    </Layout>
+  )
 }
 
 export default App;

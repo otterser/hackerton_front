@@ -9,6 +9,7 @@ const Card = styled.div`
   margin: 20px 0;
   width: 100%;
   max-width: 600px;
+  
 `;
 
 const Title = styled.h2`
@@ -41,7 +42,6 @@ const ResultCard = ({ results = [] }) => {
         <>
           <Title>주의가 필요한 수준입니다다</Title>
           <Content>
-            
             여러 영역에서 주의가 필요한 것으로 나타났습니다. 
             전문가와 상담을 통해 더 자세한 분석을 받아보시는 것을 추천드립니다.
           </Content>

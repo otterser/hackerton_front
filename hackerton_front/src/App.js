@@ -1,9 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
-import StartPage from './pages/StartPage';
-import NextPage from './pages/NextPage';
 import ResultPage from './resultPage/ResultPage';
+import MainPage from './pages/MainPage';
 
 // 레이아웃 컴포넌트
 const Layout = styled.div`
@@ -31,8 +30,8 @@ function App() {
       <SideSection />
       <MainSection>
         <Routes>
-          <Route path="/" element={<StartPage />} />
-          <Route path="/next" element={<NextPage />} />
+          <Route path="/" element={<MainPage />} />
+          {/* <Route path="/next" element={<NextPage />} /> */}
           <Route path="/result" element={<ResultPage />} />
         </Routes>
       </MainSection>

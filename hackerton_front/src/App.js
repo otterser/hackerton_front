@@ -3,16 +3,17 @@ import { Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
 // import MainPage from './pages/MainPage';
 // import SurveyPage from './pages/SurveyPage';
-import Page from './Page';
+import Page from './Page'
 import Pages from './Pages';
 import Pagesol from './Pagesol';
 import Pagesnl from './Pagesnl';
 import ResultPage from './resultPage/ResultPage';
+import MainPage from './pages/MainPage';
 
 // 레이아웃 컴포넌트
 const Layout = styled.div`
   display: flex;
-  min-height: 100vh;`
+  height: 100%;`
 ;
 
 const SideSection = styled.div`
@@ -26,7 +27,9 @@ const MainSection = styled.div`
   margin: 0 auto;
   padding: 20px;
   background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);`
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height : 100%`
+  
 ;
 
 function App() {
@@ -35,8 +38,8 @@ function App() {
       <SideSection />
       <MainSection>
         <Routes>
-          {/* <Route path="/" element={<MainPage />} />
-          <Route path="/survey" element={<SurveyPage />} /> */}
+          <Route path="/" element={<MainPage />} />
+          {/* <Route path="/next" element={<NextPage />} /> */}
           <Route path="/result" element={<ResultPage />} />
           <Route path="/Page" element={<Page />} />
             <Route path="/Pages" element={<Pages />} />

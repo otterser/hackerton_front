@@ -40,7 +40,5 @@ function App() {
         <SideSection />
       </Layout>
     </Router>
-  );
+  )
 }
-
-export default App;

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // useNavigate를 사용하여 페이지 이동
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -60,11 +60,10 @@ const CheckboxGroup = styled.div`
 function Pages() {
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [answers, setAnswers] = useState({}); // 각 문항의 선택 값을 저장
-  const navigate = useNavigate(); // useNavigate 훅 사용
+  const [answers, setAnswers] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Flask 서버의 엔드포인트 호출
     fetch('http://localhost:5000/questions/ptsd')
       .then((response) => {
         if (!response.ok) {
@@ -75,10 +74,9 @@ function Pages() {
       .then((data) => {
         setQuestions(data);
         setLoading(false);
-        // 초기 상태 설정
         const initialAnswers = {};
         data.forEach((_, index) => {
-          initialAnswers[index] = null; // 초기값은 선택되지 않음
+          initialAnswers[index] = null;
         });
         setAnswers(initialAnswers);
       })
@@ -96,9 +94,16 @@ function Pages() {
   };
 
   const handleSubmit = () => {
+    const scores = Object.values(answers).filter(val => val !== null);
+    const total = scores.reduce((acc, val) => acc + val, 0);
     console.log('제출된 답변:', answers);
-    alert('답변이 제출되었습니다!');
-    navigate('/page'); // 제출 후 Page.js로 이동
+    console.log('총합 점수:', total);
+
+    navigate('/score', {
+      state: {
+        dataGroups: [[total], [35], [60]], // PTSD: 실제 점수, 우울/불안: 예시
+      }
+    });
   };
 
   return (

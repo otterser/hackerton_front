@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -56,13 +57,13 @@ const CheckboxGroup = styled.div`
   gap: 10px;
 `;
 
-function Pages() {
+function Pagesnl() {
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [answers, setAnswers] = useState({}); // 각 문항의 선택 값을 저장
+  const [answers, setAnswers] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Flask 서버의 엔드포인트 호출
     fetch('http://localhost:5000/questions/anxiety')
       .then((response) => {
         if (!response.ok) {
@@ -73,10 +74,9 @@ function Pages() {
       .then((data) => {
         setQuestions(data);
         setLoading(false);
-        // 초기 상태 설정
         const initialAnswers = {};
         data.forEach((_, index) => {
-          initialAnswers[index] = null; // 초기값은 선택되지 않음
+          initialAnswers[index] = null;
         });
         setAnswers(initialAnswers);
       })
@@ -94,8 +94,16 @@ function Pages() {
   };
 
   const handleSubmit = () => {
-    console.log('제출된 답변:', answers);
-    alert('답변이 제출되었습니다!');
+    const scores = Object.values(answers).filter((val) => val !== null);
+    const total = scores.reduce((acc, val) => acc + val, 0);
+
+    console.log('제출된 점수 총합:', total);
+
+    navigate('/score', {
+      state: {
+        dataGroups: [[25], [35], [total]] // PTSD/우울: 임시 값, 불안: 실제 점수
+      }
+    });
   };
 
   return (
@@ -133,4 +141,4 @@ function Pages() {
   );
 }
 
-export default Pages;
+export default Pagesnl;

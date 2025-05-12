@@ -39,6 +39,10 @@ const Title = styled.h1`
 const SubTitle = styled.h3`
   margin-bottom: 10px;
 `;
+const SubTitleTwo = styled.h3`
+  margin-bottom: 10px;
+`;
+
 
 const ResultPage = () => {
   const location = useLocation();
